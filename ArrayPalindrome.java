@@ -10,7 +10,7 @@ public class ArrayPalindrome{
     }
 
     public Boolean isPalindrome(String input){
-        for (int i = input.length() - 1; i >= 0; i--){
+        for (int i = input.length()-1; i >= 0; i--){
             stack0.push(input.charAt(i));
             stack1.push(input.charAt(i));
         }
@@ -22,20 +22,30 @@ public class ArrayPalindrome{
         for(int i = 0; i <stack0.size(); i++){
             char element0 = stack0.pop();
             char element1 = stack2.pop();
-            if (element0 == element1){
+            if(!(element0 == element1)){
+                
                 stack0.clear();
                 stack1.clear();
                 stack2.clear();
-                return true;
+                return false;
             }
         }
-        return false; 
+        
+        stack0.clear();
+        stack1.clear();
+        stack2.clear();
+        return true;
     }
     public static void main(String[] args) {
         ArrayPalindrome test1 = new ArrayPalindrome();
         System.out.println(test1.isPalindrome("elle"));
-        System.out.println(test1.isPalindrome("bill"));
-        System.out.println(test1.isPalindrome(""));
-
+        ArrayPalindrome test2 = new ArrayPalindrome();
+        System.out.println(test2.isPalindrome("bill"));
+        ArrayPalindrome test3 = new ArrayPalindrome();
+        System.out.println(test3.isPalindrome("fellef"));
+        ArrayPalindrome test5 = new ArrayPalindrome();
+        System.out.println(test5.isPalindrome(""));
+        ArrayPalindrome test6 = new ArrayPalindrome();
+        System.out.println(test6.isPalindrome("a"));
     }
 }
