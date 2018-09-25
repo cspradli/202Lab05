@@ -4,17 +4,17 @@ public class ArrayPalindrome{
     private ArrayStack<Character> stack2;
 
     public ArrayPalindrome(){
-        stack0 = new ArrayStack<>();
-        stack1 = new ArrayStack<>();
-        stack2 = new ArrayStack<>();
+        stack0 = new ArrayStack<Character>();
+        stack1 = new ArrayStack<Character>();
+        stack2 = new ArrayStack<Character>();
     }
 
     public Boolean isPalindrome(String input){
-        for (int i = input.length(); i >= 0; i--){
+        for (int i = input.length() - 1; i >= 0; i--){
             stack0.push(input.charAt(i));
             stack1.push(input.charAt(i));
         }
-        //stack1 = stack0;
+        stack1 = stack0;
         for (int i = 0; i<stack1.size(); i++){
             char element = stack1.pop();
             stack2.push(element);
@@ -29,6 +29,13 @@ public class ArrayPalindrome{
                 return true;
             }
         }
-        return false;
+        return false; 
+    }
+    public static void main(String[] args) {
+        ArrayPalindrome test1 = new ArrayPalindrome();
+        System.out.println(test1.isPalindrome("elle"));
+        System.out.println(test1.isPalindrome("bill"));
+        System.out.println(test1.isPalindrome(""));
+
     }
 }
