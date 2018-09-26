@@ -15,13 +15,12 @@ public class ArrayPalindrome{
             stack1.push(input.charAt(i));
             
         }
-        System.out.println(stack0.size());
-        for(int i = 1; i < stack0.size()+1; i++){
+        for(int i = 0; i < stack0.size(); i++){
             char element0 = stack1.pop();
             stack2.push(element0);
         }
         stack1.clear();
-        for(int i = 0; i < input.length()-1; i++){
+        for(int i = 0; i < stack0.size(); i++){
             char compare0 = stack0.pop();
             char compare1 = stack2.pop();
             if (!(compare0 == compare1)){
