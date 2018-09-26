@@ -24,9 +24,22 @@ public class LinkedPalindrome{
             char compare0 = stack0.pop();
             char compare1 = stack2.pop();
             if (!(compare0 == compare1)){
+                stack0.clear();
+                stack2.clear();
                 return false;
             }
         }
+        stack0.clear();
+        stack2.clear();
         return true;
+    }
+    public static void main(String[] args) {
+        LinkedPalindrome tests = new LinkedPalindrome();
+        System.out.println(tests.isPalindrome("elle"));
+        System.out.println(tests.isPalindrome("racecar"));
+        System.out.println(tests.isPalindrome("bill"));
+        System.out.println(tests.isPalindrome("computers"));
+        System.out.println(tests.isPalindrome(""));
+        System.out.println(tests.isPalindrome("a"));
     }
 }

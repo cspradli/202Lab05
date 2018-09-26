@@ -24,23 +24,24 @@ public class ArrayPalindrome{
             char compare0 = stack0.pop();
             char compare1 = stack2.pop();
             if (!(compare0 == compare1)){
+                stack0.clear();
+                stack2.clear();
                 return false;
             }
         }
+        stack0.clear();
+        stack2.clear();
         return true;
     }
     public static void main(String[] args) {
-        ArrayPalindrome test1 = new ArrayPalindrome();
-        System.out.println(test1.isPalindrome("elle"));
-        ArrayPalindrome test2 = new ArrayPalindrome();
-        System.out.println(test2.isPalindrome("bill"));
-        ArrayPalindrome test3 = new ArrayPalindrome();
-        System.out.println(test3.isPalindrome("fellef"));
-        ArrayPalindrome test5 = new ArrayPalindrome();
-        System.out.println(test5.isPalindrome(""));
-        ArrayPalindrome test6 = new ArrayPalindrome();
-        System.out.println(test6.isPalindrome("a"));
-        ArrayPalindrome test7 = new ArrayPalindrome();
-        System.out.println(test7.isPalindrome("racecar"));
+        ArrayPalindrome tests = new ArrayPalindrome();
+        System.out.println(tests.isPalindrome("elle"));
+        System.out.println(tests.isPalindrome("racecar"));
+        System.out.println(tests.isPalindrome("202"));
+        System.out.println(tests.isPalindrome("235"));
+        System.out.println(tests.isPalindrome("bill"));
+        System.out.println(tests.isPalindrome("computers"));
+        System.out.println(tests.isPalindrome(""));
+        System.out.println(tests.isPalindrome("a"));
     }
 }
