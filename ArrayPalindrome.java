@@ -12,8 +12,7 @@ public class ArrayPalindrome{
     public Boolean isPalindrome(String input){
         for (int i = 0; i < input.length(); i++){
             stack0.push(input.charAt(i));
-            stack1.push(input.charAt(i));
-            
+            stack1.push(input.charAt(i));     
         }
         for(int i = 0; i < stack0.size(); i++){
             char element0 = stack1.pop();
@@ -33,6 +32,7 @@ public class ArrayPalindrome{
         stack2.clear();
         return true;
     }
+    
     public static void main(String[] args) {
         ArrayPalindrome tests = new ArrayPalindrome();
         System.out.println(tests.isPalindrome("elle"));

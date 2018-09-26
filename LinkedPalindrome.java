@@ -33,6 +33,7 @@ public class LinkedPalindrome{
         stack2.clear();
         return true;
     }
+    
     public static void main(String[] args) {
         LinkedPalindrome tests = new LinkedPalindrome();
         System.out.println(tests.isPalindrome("elle"));
